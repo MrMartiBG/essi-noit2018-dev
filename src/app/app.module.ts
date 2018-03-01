@@ -7,6 +7,7 @@ import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatInputModule, 
 
 import { AppComponent } from './app.component';
 import { FormLoginComponent } from './form-login/form-login.component';
+import { SocketFuncService } from './socket-func.service';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { FormLoginComponent } from './form-login/form-login.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [SocketFuncService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

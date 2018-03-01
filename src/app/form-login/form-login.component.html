@@ -9,18 +9,19 @@
 </div>
 <!-- Application header ends -->
 
-<mat-grid-list cols="2" rowHeight="8:1">
-  <mat-grid-tile colspan="2">
+<mat-grid-list cols="3" rowHeight="8:1">
+  <mat-grid-tile colspan="3">
       <mat-input-container class="justifier">
-          <input matInput placeholder="Username" text="username">
+          <input matInput placeholder="Username" text="username" [(ngModel)]="username">
       </mat-input-container>
   </mat-grid-tile>
-<mat-grid-tile colspan="2">
+<mat-grid-tile colspan="3">
   <mat-input-container class="justifier">
-      <input matInput placeholder="Password" text="password">
+      <input matInput placeholder="Password" text="password" [(ngModel)]="password">
   </mat-input-container>
 </mat-grid-tile>
-<mat-grid-tile colspan="2">
-  <button mat-raised-button class="login-button"> Login </button>
+<mat-grid-tile colspan="3">
+  <button mat-raised-button class="login-button" (click)="loginUser()"> Login </button>
+  <button mat-raised-button class="register-button"> Register </button>
 </mat-grid-tile>
 </mat-grid-list>
