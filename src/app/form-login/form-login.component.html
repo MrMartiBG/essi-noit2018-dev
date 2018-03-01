@@ -1,0 +1,26 @@
+<!--
+    Login template using Angular Material
+    @author Shashank Tiwari
+-->
+
+<!-- Application header starts -->
+<div class="app-header">
+    <h1 class="app-heading">{{title}}</h1>
+</div>
+<!-- Application header ends -->
+
+<mat-grid-list cols="2" rowHeight="8:1">
+  <mat-grid-tile colspan="2">
+      <mat-input-container class="justifier">
+          <input matInput placeholder="Username" text="username">
+      </mat-input-container>
+  </mat-grid-tile>
+<mat-grid-tile colspan="2">
+  <mat-input-container class="justifier">
+      <input matInput placeholder="Password" text="password">
+  </mat-input-container>
+</mat-grid-tile>
+<mat-grid-tile colspan="2">
+  <button mat-raised-button class="login-button"> Login </button>
+</mat-grid-tile>
+</mat-grid-list>
