@@ -8,12 +8,19 @@ import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatInputModule, 
 import { AppComponent } from './app.component';
 import { FormLoginComponent } from './form-login/form-login.component';
 import { SocketFuncService } from './socket-func.service';
+import { AppRoutingModule } from './app-routing.module';
+import { FormRegisterComponent } from './form-register/form-register.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormLoginComponent
+    FormLoginComponent,
+    FormRegisterComponent,
+    NavMenuComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +31,8 @@ import { SocketFuncService } from './socket-func.service';
   	MatIconModule,
   	BrowserAnimationsModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [SocketFuncService],
   bootstrap: [AppComponent]

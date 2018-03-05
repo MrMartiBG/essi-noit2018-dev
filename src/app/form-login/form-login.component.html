@@ -3,12 +3,6 @@
     @author Shashank Tiwari
 -->
 
-<!-- Application header starts -->
-<div class="app-header">
-    <h1 class="app-heading">{{title}}</h1>
-</div>
-<!-- Application header ends -->
-
 <mat-grid-list cols="3" rowHeight="8:1">
   <mat-grid-tile colspan="3">
       <mat-input-container class="justifier">
@@ -22,6 +16,6 @@
 </mat-grid-tile>
 <mat-grid-tile colspan="3">
   <button mat-raised-button class="login-button" (click)="loginUser()"> Login </button>
-  <button mat-raised-button class="register-button"> Register </button>
+  <a routerLink="/register"><button mat-raised-button class="register-button"> Register </button></a>
 </mat-grid-tile>
 </mat-grid-list>

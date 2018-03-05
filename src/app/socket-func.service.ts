@@ -1,7 +1,7 @@
 import * as io from 'socket.io-client';
 
 export class SocketFuncService {
-  private url = "192.168.12.16:3030";
+  private url = "localhost:3030";
   private socket;
 
   constructor() {
@@ -9,6 +9,9 @@ export class SocketFuncService {
   }
   public loginUser(user) {
     this.socket.emit('login_user', user);
+  }
+  public registerUser(user) {
+    this.socket.emit('register_user', user);
   }
 
 }
