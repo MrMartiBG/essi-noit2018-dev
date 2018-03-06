@@ -4,6 +4,9 @@ import { FormLoginComponent } from './form-login/form-login.component';
 import { FormRegisterComponent } from './form-register/form-register.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { CarsListComponent } from './cars-list/cars-list.component';
+import { CarMenuComponent } from './car-menu/car-menu.component';
+import { CarAddComponent } from './car-add/car-add.component';
 
 const routes: Routes = [
   {
@@ -17,6 +20,18 @@ const routes: Routes = [
   {
     path: 'register',
     component: FormRegisterComponent
+  },
+  {
+    path: 'cars',
+    component: CarMenuComponent
+  },
+  {
+    path: 'cars/add',
+    component: CarAddComponent
+  },
+  {
+    path: 'cars/list',
+    component: CarsListComponent
   },
   {
      path: '',

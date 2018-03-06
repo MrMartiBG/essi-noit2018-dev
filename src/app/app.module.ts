@@ -12,6 +12,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormRegisterComponent } from './form-register/form-register.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
+import { CarsListComponent } from './cars-list/cars-list.component';
+import { CarMenuComponent } from './car-menu/car-menu.component';
+import { CarAddComponent } from './car-add/car-add.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { HomeComponent } from './home/home.component';
     FormLoginComponent,
     FormRegisterComponent,
     NavMenuComponent,
-    HomeComponent
+    HomeComponent,
+    CarsListComponent,
+    CarMenuComponent,
+    CarAddComponent
   ],
   imports: [
     BrowserModule,

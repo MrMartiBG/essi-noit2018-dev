@@ -12,23 +12,24 @@ export class FormRegisterComponent {
   email: string;
   firstName: string;
   lastName: string;
+  mobile: string;
 
   constructor(private socketFunc: SocketFuncService) { }
 
   registerUser() {
-    this.socketFunc.registerUser(
-      {
+    this.socketFunc.registerUser({
         username: this.username,
         password: this.password,
         email: this.email,
         firstname: this.firstName,
-        lastname: this.lastName
-      }
-    );
+        lastname: this.lastName,
+        mobile: this.mobile
+      });
     this.username='';
     this.password='';
     this.email='';
     this.firstName='';
     this.lastName='';
+    this.mobile='';
   }
 }

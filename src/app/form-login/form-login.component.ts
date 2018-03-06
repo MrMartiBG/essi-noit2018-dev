@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SocketFuncService } from '../socket-func.service';
+import { SocketFuncService } from '../socket-func.service'
 
 @Component({
   selector: 'app-form-login',
@@ -13,7 +13,10 @@ export class FormLoginComponent {
   constructor(private socketFunc: SocketFuncService) { }
 
   loginUser() {
-    this.socketFunc.loginUser({username: this.username, password: this.password});
+    this.socketFunc.loginUser({
+      username: this.username,
+      password: this.password
+    });
     this.username='';
     this.password='';
   }

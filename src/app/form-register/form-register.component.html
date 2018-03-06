@@ -1,27 +1,32 @@
 <mat-grid-list cols="3" rowHeight="6:1">
   <mat-grid-tile colspan="3">
       <mat-input-container class="justifier">
-          <input matInput placeholder="Username" text="username" [(ngModel)]="username">
+          <input required matInput placeholder="Username" text="username" [(ngModel)]="username">
       </mat-input-container>
   </mat-grid-tile>
   <mat-grid-tile colspan="3">
     <mat-input-container class="justifier">
-        <input matInput placeholder="Password" text="password" [(ngModel)]="password">
+        <input required matInput placeholder="Password" text="password" [(ngModel)]="password">
     </mat-input-container>
   </mat-grid-tile>
   <mat-grid-tile colspan="3">
     <mat-input-container class="justifier">
-        <input matInput placeholder="Email" text="email" [(ngModel)]="email">
+        <input required matInput placeholder="Email" text="email" [(ngModel)]="email">
     </mat-input-container>
   </mat-grid-tile>
   <mat-grid-tile colspan="3">
     <mat-input-container class="justifier">
-        <input matInput placeholder="First Name" text="firstName" [(ngModel)]="firstName">
+        <input required matInput placeholder="First Name" text="firstName" [(ngModel)]="firstName">
     </mat-input-container>
   </mat-grid-tile>
   <mat-grid-tile colspan="3">
     <mat-input-container class="justifier">
-        <input matInput placeholder="Last Name" text="lastName" [(ngModel)]="lastName">
+        <input required matInput placeholder="Last Name" text="lastName" [(ngModel)]="lastName">
+    </mat-input-container>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3">
+    <mat-input-container class="justifier">
+        <input matInput placeholder="Mobile number" text="mobile" [(ngModel)]="mobile">
     </mat-input-container>
   </mat-grid-tile>
   <mat-grid-tile colspan="3">
