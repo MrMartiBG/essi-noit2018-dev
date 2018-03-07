@@ -10,6 +10,14 @@ import { CarAddComponent } from './car-add/car-add.component';
 
 const routes: Routes = [
   {
+    path: 'cars/add',
+    component: CarAddComponent
+  },
+  {
+    path: 'cars/list',
+    component: CarsListComponent
+  },
+  {
      path: 'home',
      component: HomeComponent
   },
@@ -26,14 +34,6 @@ const routes: Routes = [
     component: CarMenuComponent
   },
   {
-    path: 'cars/add',
-    component: CarAddComponent
-  },
-  {
-    path: 'cars/list',
-    component: CarsListComponent
-  },
-  {
      path: '',
      redirectTo: '/home',
      pathMatch: 'full'
@@ -46,7 +46,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes) ],
+  imports: [RouterModule.forRoot(
+      routes,
+      { enableTracing: true}
+    	)
+  ],
   exports: [ RouterModule ]
 })
 
