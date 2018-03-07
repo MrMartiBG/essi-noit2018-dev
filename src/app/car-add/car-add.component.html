@@ -1,35 +1,31 @@
 <h1> Add a car </h1>
-<div class="wrapper" ng-show="showAddCarForm" class="ng-hide">
-  <mat-grid-list cols="3" rowHeight="6:1">
-    <mat-grid-tile colspan="3">
-        <mat-input-container class="justifier">
-            <input required matInput placeholder="Brand" text="brand" [(ngModel)]="brand">
-        </mat-input-container>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="3">
+<mat-grid-list cols="3" rowHeight="8:1">
+  <mat-grid-tile colspan="3">
       <mat-input-container class="justifier">
-          <input required matInput placeholder="Model" text="model" [(ngModel)]="model">
+          <input required matInput placeholder="Brand" text="brand" [(ngModel)]="brand">
       </mat-input-container>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="3">
-      <mat-input-container class="justifier">
-          <input required matInput placeholder="Generation" text="generation" [(ngModel)]="generation">
-      </mat-input-container>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="3">
-      <mat-input-container class="justifier">
-          <input required matInput placeholder="Engine" text="engine" [(ngModel)]="engine">
-      </mat-input-container>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="3">
-      <mat-input-container class="justifier">
-          <input required matInput placeholder="Vin number" text="vin" [(ngModel)]="vin">
-      </mat-input-container>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="3">
-      <mat-input-container class="justifier">
-          <button mat-raised-button class="addCar-button" ng-click="showAddCarForm=false"> Add a car </button>
-      </mat-input-container>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3">
+    <mat-input-container class="justifier">
+        <input required matInput placeholder="Model" text="model" [(ngModel)]="model">
+    </mat-input-container>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3">
+    <mat-input-container class="justifier">
+        <input required matInput placeholder="Generation" text="generation" [(ngModel)]="generation">
+    </mat-input-container>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3">
+    <mat-input-container class="justifier">
+        <input required matInput placeholder="Engine" text="engine" [(ngModel)]="engine">
+    </mat-input-container>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3">
+    <mat-input-container class="justifier">
+        <input required matInput placeholder="Vin number" text="vin" [(ngModel)]="vin">
+    </mat-input-container>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3">
+      <button mat-raised-button class="addCar-button" (click)="addCar()"> Add car </button>
+  </mat-grid-tile>
+</mat-grid-list>

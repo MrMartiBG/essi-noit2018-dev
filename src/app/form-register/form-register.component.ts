@@ -16,15 +16,22 @@ export class FormRegisterComponent {
 
   constructor(private socketFunc: SocketFuncService) { }
 
+  result(info) {
+    console.log(info);
+  }
+
   registerUser() {
-    this.socketFunc.registerUser({
+    this.socketFunc.registerUser(
+      {
         username: this.username,
         password: this.password,
         email: this.email,
         firstname: this.firstName,
         lastname: this.lastName,
         mobile: this.mobile
-      });
+      },
+      this.result
+    );
     this.username='';
     this.password='';
     this.email='';

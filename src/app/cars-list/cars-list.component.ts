@@ -7,9 +7,17 @@ import { SocketFuncService } from '../socket-func.service';
   styleUrls: ['./cars-list.component.css']
 })
 export class CarsListComponent {
+  carsNumber: number;
+  carsNumber = 0;
   constructor(private socketFunc: SocketFuncService) { }
-
+  result(info) {
+    console.log(info);
+    this.carsNumber = info.info.length;
+    console.log(this.carsNumber);
+  }
   ngOnInit() {
-    this.socketFunc.fetchCar();
+    this.socketFunc.fetchMyCars(
+      this.result
+    );
   }
 }

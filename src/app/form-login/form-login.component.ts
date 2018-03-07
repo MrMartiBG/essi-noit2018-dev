@@ -12,11 +12,18 @@ export class FormLoginComponent {
 
   constructor(private socketFunc: SocketFuncService) { }
 
+  result(info) {
+    console.log(info);
+  }
+
   loginUser() {
-    this.socketFunc.loginUser({
-      username: this.username,
-      password: this.password
-    });
+    this.socketFunc.loginUser(
+      {
+        username: this.username,
+        password: this.password
+      },
+      this.result
+    );
     this.username='';
     this.password='';
   }

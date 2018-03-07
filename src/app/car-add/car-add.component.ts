@@ -15,14 +15,21 @@ export class CarAddComponent {
 
   constructor(private socketFunc: SocketFuncService) { }
 
+  result(info) {
+    console.log(info);
+  }
+
   addCar() {
-    this.socketFunc.addCar({
-      brand: this.brand,
-      model: this.model,
-      generation: this.generation,
-      engine: this.engine,
-      vin: this.vin
-    });
+    this.socketFunc.addCar(
+      {
+        brand: this.brand,
+        model: this.model,
+        generation: this.generation,
+        engine: this.engine,
+        vin: this.vin
+      },
+      this.result
+    );
     this.brand='';
     this.model='';
     this.generation='';
