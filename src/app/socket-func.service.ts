@@ -6,6 +6,9 @@ export class SocketFuncService {
 
   constructor() {
     this.socket = io(this.url);
+    this.socket.on("server_error", function(info) {
+      console.log("server_error", info);
+    });
   }
   public registerUser(user, result) {
     this.socket.emit('register_user', user, result);
