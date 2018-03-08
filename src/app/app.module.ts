@@ -6,15 +6,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatInputModule, MatIconModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { FormLoginComponent } from './form-login/form-login.component';
+import { FormLoginComponent } from './forms/form-login.component';
 import { SocketFuncService } from './socket-func.service';
-import { AppRoutingModule } from './app-routing.module';
-import { FormRegisterComponent } from './form-register/form-register.component';
+import { FormRegisterComponent } from './forms/form-register.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CarsListComponent } from './cars-list/cars-list.component';
-import { CarMenuComponent } from './car-menu/car-menu.component';
-import { CarAddComponent } from './car-add/car-add.component';
+import { CarsModule } from './cars/cars.module';
+import { ServiceModule } from './service/service.module';
+import { NotFoundComponent } from './not-found.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -24,9 +24,7 @@ import { CarAddComponent } from './car-add/car-add.component';
     FormRegisterComponent,
     NavMenuComponent,
     HomeComponent,
-    CarsListComponent,
-    CarMenuComponent,
-    CarAddComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +36,8 @@ import { CarAddComponent } from './car-add/car-add.component';
   	BrowserAnimationsModule,
     FormsModule,
     HttpModule,
+    CarsModule,
+    ServiceModule,
     AppRoutingModule
   ],
   providers: [SocketFuncService],
