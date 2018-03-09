@@ -1,6 +1,6 @@
 import * as io from 'socket.io-client';
 
-/*export class SocketFuncService {
+export class SocketFuncService {
   private url = "localhost:3030";
   private socket;
 
@@ -51,5 +51,5 @@ import * as io from 'socket.io-client';
   }
   public fetchModification(carInfo, result) {
     this.socket.emit('fetch_modification', {car_id: carInfo.id}, result);
-  }*/
+  }
 }
