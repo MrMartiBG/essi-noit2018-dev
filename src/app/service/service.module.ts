@@ -6,16 +6,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatInputModule, MatIconModule} from '@angular/material';
 
 import { SocketFuncService } from '../socket-func.service';
+import { ServiceCarAddComponent } from './service-car-add.component';
+import { ServiceCarListComponent } from './service-car-list.component';
+import { ServiceCarComponent } from './service-car.component';
 import { ServiceMenuComponent } from './service-menu.component';
-import { ServiceListComponent } from './service-list.component';
-import { ServiceAddComponent } from './service-add.component';
+import { ServiceUserListComponent } from './service-user-list.component';
+import { ServiceUserAddComponent } from './service-user-add.component';
+import { ServiceToolsComponent } from './service-tools.component';
+import { ServiceCreateServiceComponent } from './service-create-service.component';
+
 import { ServiceRoutingModule } from './service-routing.module';
 
 @NgModule({
   declarations: [
-    ServiceMenuComponent,
-    ServiceListComponent,
-    ServiceAddComponent
+    ServiceCarAddComponent,
+    ServiceCarListComponent,
+    ServiceCarComponent,
+    ServiceUserListComponent,
+    ServiceUserAddComponent,
+    ServiceToolsComponent,
+    ServiceCreateServiceComponent,
+    ServiceMenuComponent
   ],
   imports: [
     BrowserModule,

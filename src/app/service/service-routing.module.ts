@@ -1,9 +1,15 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ServiceCarAddComponent } from './service-car-add.component';
+import { ServiceCarListComponent } from './service-car-list.component';
+import { ServiceCarComponent } from './service-car.component';
+import { ServiceUserListComponent} from './service-user-list.component';
+import { ServiceToolsComponent } from './service-tools.component';
+import { ServiceCreateServiceComponent } from './service-create-service.component';
+
 import { ServiceMenuComponent } from './service-menu.component';
-import { ServiceListComponent } from './service-list.component';
-import { ServiceAddComponent } from './service-add.component';
+
 
 const serviceRoutes: Routes = [
   {
@@ -11,12 +17,32 @@ const serviceRoutes: Routes = [
     component: ServiceMenuComponent,
     children: [
       {
-        path: 'list',
-        component: ServiceListComponent
+        path: 'cars',
+        component: ServiceCarComponent,
+        children: [
+          {
+            path: 'list',
+            component: ServiceCarListComponent
+          },
+          {
+            path: 'add',
+            component: ServiceCarAddComponent
+          }
+        ]
       },
       {
-        path: 'add',
-        component: ServiceAddComponent
+        path: 'tools',
+        component: ServiceToolsComponent,
+        children: [
+          {
+            path: 'services',
+            component: ServiceCreateServiceComponent
+          },
+          {
+            path: 'add',
+            component: ServiceCarAddComponent
+          }
+        ]
       }
     ]
   }

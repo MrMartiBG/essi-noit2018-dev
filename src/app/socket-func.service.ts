@@ -25,14 +25,17 @@ export class SocketFuncService {
   public fetchMyCars(result) {
     this.socket.emit('fetch_my_cars', {}, result);
   }
-  public addServiceCar(serviceId, carId, result) {
-    this.socket.emit('add_service_car', {service_id: serviceId, car_id: carId}, result);
+  public fetchCar(car, result) {
+    this.socket.emit('fetch_car', {id: car.id}, result);
   }
-  public fetchServiceCar(serviceId, carId, result) {
-    this.socket.emit('fetch_service_car', {service_id: serviceId, car_id: carId}, result);
+  public addServiceCar(service, car, result) {
+    this.socket.emit('add_service_car', {service_id: service.id, car_id: car.id}, result);
+  }
+  public fetchServiceCar(service, car, result) {
+    this.socket.emit('fetch_service_car', {service_id: service.id, car_id: car.id}, result);
   }
   public addServiceInfo(serviceInfo, result) {
-    this.socket.emit('add_service_info', serviceInfo, result);
+    this.socket.emit('add_service_info', {name: serviceInfo.name, address: serviceInfo.address, email: serviceInfo.email, mobile: serviceInfo.mobile}, result);
   }
   public fetchServiceInfo(serviceId, result) {
     this.socket.emit('fetch_service_info', serviceId, result);

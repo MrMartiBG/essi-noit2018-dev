@@ -7,7 +7,7 @@ import { SocketFuncService } from '../socket-func.service';
   <h1> You have {{cars.length}} car/s</h1>
   <ul class="items">
     <li *ngFor="let object of cars">
-      <span class="badge">{{object.brand}}</span>{{object.model}}{{object.generation}}{{object.engine}}{{object.vin_number}}
+      <span class="badge">{{object.id}}{{object.brand}}{{object.model}}{{object.generation}}{{object.engine}}{{object.vin_number}}</span>
     </li>
   </ul>
   `
