@@ -14,6 +14,7 @@ import { ServiceUserListComponent } from './service-user-list.component';
 import { ServiceUserAddComponent } from './service-user-add.component';
 import { ServiceToolsComponent } from './service-tools.component';
 import { ServiceCreateServiceComponent } from './service-create-service.component';
+import { ServiceListServiceComponent } from './service-list-service.component';
 
 import { ServiceRoutingModule } from './service-routing.module';
 
@@ -26,6 +27,7 @@ import { ServiceRoutingModule } from './service-routing.module';
     ServiceUserAddComponent,
     ServiceToolsComponent,
     ServiceCreateServiceComponent,
+    ServiceListServiceComponent,
     ServiceMenuComponent
   ],
   imports: [

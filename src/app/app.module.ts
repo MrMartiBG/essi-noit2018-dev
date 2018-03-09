@@ -13,6 +13,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CarsModule } from './cars/cars.module';
 import { ServiceModule } from './service/service.module';
+import { ModificationsModule } from './modifications/mods.module';
 import { NotFoundComponent } from './not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -38,6 +39,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     CarsModule,
     ServiceModule,
+    ModificationsModule,
     AppRoutingModule
   ],
   providers: [SocketFuncService],

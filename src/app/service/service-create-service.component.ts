@@ -33,13 +33,14 @@ export class ServiceCreateServiceComponent {
   address: string;
   email: string;
   mobile: string;
+  serviceId: number;
+  services = [];
 
   constructor(private socketFunc: SocketFuncService) { }
 
-  result(info) {
+  result_callback(info) {
     console.log(info);
   }
-
   addServiceInfo() {
     this.socketFunc.addServiceInfo(
       {
@@ -48,7 +49,7 @@ export class ServiceCreateServiceComponent {
         email: this.email,
         mobile: this.mobile
       },
-      this.result
+      this.result_callback
     );
     this.name='';
     this.address='';

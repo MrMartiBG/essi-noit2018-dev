@@ -37,19 +37,19 @@ export class SocketFuncService {
   public addServiceInfo(serviceInfo, result) {
     this.socket.emit('add_service_info', {name: serviceInfo.name, address: serviceInfo.address, email: serviceInfo.email, mobile: serviceInfo.mobile}, result);
   }
-  public fetchServiceInfo(serviceId, result) {
-    this.socket.emit('fetch_service_info', serviceId, result);
+  public fetchServiceInfo(service, result) {
+    this.socket.emit('fetch_service_info', {id: service.id}, result);
   }
   public addServiceUser(userInfo, serviceInfo, result) {
     this.socket.emit('add_service_user', {user_id: userInfo.id, user_type: userInfo.type, service_id: serviceInfo.id}, result);
   }
-  public fetchServiceUser(serviceId, result) {
-    this.socket.emit('fetch_service_user', {service_id: serviceId}, result);
+  public fetchServiceUser(service, result) {
+    this.socket.emit('fetch_service_user', {service_id: service.service_id}, result);
   }
-  public addModification(result) {
-    //this.socket.emit('add_modification', {car_id: carId, service_id: serviceId, status: status, mileage: mileage, date: date, type: type, part: part, description: description}, result);
+  public addModification(modInfo, carInfo, serviceInfo, result) {
+    this.socket.emit('add_modification', {car_id: carInfo.id, service_id: serviceInfo.id, status: carInfo.status, mileage: carInfo.mileage, type: modInfo.type, part: modInfo.part, description: modInfo.description}, result);
   }
-  public fetchModification(result) {
-    this.socket.emit('fetch_modification', {}, result);
+  public fetchModification(carInfo, result) {
+    this.socket.emit('fetch_modification', {car_id: carInfo.id}, result);
   }
 }
