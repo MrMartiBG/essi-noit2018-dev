@@ -1,11 +1,11 @@
 import * as io from 'socket.io-client';
 
-export class SocketFuncService {
+/*export class SocketFuncService {
   private url = "localhost:3030";
   private socket;
 
   constructor() {
-    this.socket = io(this.url);
+    this.socket = io();
     this.socket.on("server_error", function(info) {
       console.log("server_error", info);
     });
@@ -51,5 +51,5 @@ export class SocketFuncService {
   }
   public fetchModification(carInfo, result) {
     this.socket.emit('fetch_modification', {car_id: carInfo.id}, result);
-  }
+  }*/
 }
