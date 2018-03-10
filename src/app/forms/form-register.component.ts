@@ -32,7 +32,7 @@ import { SocketFuncService } from '../socket-func.service';
         <label for="mobile">Mobile</label>
         <input type="text" class="form-control" id="mobile" required [(ngModel)]="mobile" name="mobile">
       </div>
-      <button type="submit" class="btn btn-add-car" [disabled]="!userRegForm.form.valid" routerLink="/login">Register</button>
+      <button type="submit" class="btn btn-reg-user" [disabled]="!userRegForm.form.valid">Register</button>
     </form>
   </div>
   `

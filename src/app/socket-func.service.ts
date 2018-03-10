@@ -6,7 +6,7 @@ export class SocketFuncService {
   isLoggedIn = false;
 
   constructor() {
-    this.socket = io(this.url);
+    this.socket = io();
     this.socket.on("server_error", function(info) {
       console.log("server_error", info);
     });
@@ -19,7 +19,7 @@ export class SocketFuncService {
     this.isLoggedIn = true;
   }
   public logoutUser(result) {
-    this.socket.emit('logout_user', result);
+    this.socket.emit('logout_user',{}, result);
     this.isLoggedIn = false;
   }
   public addCar(carInfo, result) {

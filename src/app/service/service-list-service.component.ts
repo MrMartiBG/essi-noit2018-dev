@@ -4,6 +4,22 @@ import { SocketFuncService } from '../socket-func.service';
 @Component({
   template:
   `
+  <style>
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1500px;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
   <div class="container" style="width: 100%; max-width: 350px;">
     <form (ngSubmit)="fetchServiceInfo()" #fetchServicesForm="ngForm">
       <div class="form-group">
@@ -13,12 +29,22 @@ import { SocketFuncService } from '../socket-func.service';
       <button type="submit" class="btn btn-fetch-services" [disabled]="!fetchServicesForm.form.valid">Update services</button>
       <button type="button" class="btn btn-add-services" routerLink="../add">Add service</button>
     </form>
-    <ul class="items">
-      <li *ngFor="let object of services">
-        <span class="badge">{{object.name}}{{object.address}}{{object.email}}{{object.mobile}}</span>
-      </li>
-    </ul>
   </div>
+  <br>
+  <table align="center">
+    <tr>
+      <th>Service Name</th>
+      <th>Service Address</th>
+      <th>Service email</th>
+      <th>Service Mobile</th>
+    </tr>
+    <tr *ngFor="let object of services">
+      <td>{{object.name}}</td>
+      <td>{{object.address}}</td>
+      <td>{{object.email}}</td>
+      <td>{{object.mobile}}</td>
+    </tr>
+  </table>
   `
 })
 export class ServiceListServiceComponent {
