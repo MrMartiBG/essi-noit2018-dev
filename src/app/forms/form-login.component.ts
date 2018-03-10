@@ -29,7 +29,7 @@ export class FormLoginComponent {
   username: string;
   password: string;
 
-  constructor(private socketFunc: SocketFuncService) { }
+  constructor(public socketFunc: SocketFuncService) { }
 
   result(info) {
     console.log(info);

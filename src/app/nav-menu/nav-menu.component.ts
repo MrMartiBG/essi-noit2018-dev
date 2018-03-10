@@ -8,7 +8,7 @@ import { SocketFuncService } from '../socket-func.service';
 })
 export class NavMenuComponent implements OnInit {
 
-  constructor(private socketFunc: SocketFuncService) { }
+  constructor(public socketFunc: SocketFuncService) { }
 
   ngOnInit() {
   }
@@ -16,7 +16,7 @@ export class NavMenuComponent implements OnInit {
   result(info) {
     console.log(info);
   }
-  
+
   logoutUser() {
     this.socketFunc.logoutUser(
       this.result
