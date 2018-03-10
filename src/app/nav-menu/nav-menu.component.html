@@ -3,11 +3,12 @@
         <a class="navbar-brand" routerLink="home">ESSI</a>
         <ul class="nav navbar-nav" routerLinkActive="active">
             <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="login">Login</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="register">Register</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="cars">My cars</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="service">Service</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="modifications">Modifications</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="cars" *ngIf="socketFunc.isLoggedIn">My cars</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="service" *ngIf="socketFunc.isLoggedIn">Service</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="modifications" *ngIf="socketFunc.isLoggedIn">Modifications</a></li>
+            <li class="nav-item" style="float: right;"><a class="nav-link" routerLink="login" *ngIf="!socketFunc.isLoggedIn">Login</a></li>
+            <li class="nav-item" style="float: right;"><a class="nav-link" routerLink="register" *ngIf="!socketFunc.isLoggedIn">Register</a></li>
+            <li class="nav-item" style="float: right;"><a class="nav-link" routerLink="login" *ngIf="socketFunc.isLoggedIn" (click)="logoutUser()">Logout</a></li>
         </ul>
     </div>
 </nav>

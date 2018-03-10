@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { SocketFuncService } from '../socket-func.service'
+import { SocketFuncService } from '../socket-func.service';
 
 @Component({
   selector: 'app-form-login',
   template:
   `
-  <div class="container" style="width: 100%; max-width: 250px;">
-    <h1> Registration form </h1>
+  <br>
+  <div class="container" style="width: 100%; max-width: 250px;" *ngIf="!socketFunc.isLoggedIn">
     <form (ngSubmit)="loginUser()" #userLoginForm="ngForm">
       <div class="form-group">
         <label for="username">Username</label>
@@ -22,6 +22,7 @@ import { SocketFuncService } from '../socket-func.service'
       </div>
     </form>
   </div>
+  <button type="button" class="btn btn-logout-user" *ngIf="socketFunc.isLoggedIn" (click)="logoutUser()">Logout!</button>
   `
 })
 export class FormLoginComponent {
@@ -44,5 +45,10 @@ export class FormLoginComponent {
     );
     this.username='';
     this.password='';
+  }
+  logoutUser() {
+    this.socketFunc.logoutUser(
+      this.result
+    )
   }
 }

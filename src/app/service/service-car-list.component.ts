@@ -4,8 +4,23 @@ import { SocketFuncService } from '../socket-func.service';
 @Component({
   template:
   `
+  <style>
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1500px;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
   <h1> You have {{carsService.length}} car/s in this service</h1>
-  <h2> Fill one or both fields, depending on what you want. </h2>
   <div class="container" style="width: 100%; max-width: 250px;">
     <form (ngSubmit)="update()" #carServiceForm="ngForm">
       <div class="form-group">
@@ -15,11 +30,23 @@ import { SocketFuncService } from '../socket-func.service';
       <button type="submit" class="btn btn-update-car-service-list" [disabled]="!carServiceForm.form.valid">Update</button>
     </form>
   </div>
-  <ul class="items">
-    <li *ngFor="let object of cars">
-      <span class="badge">{{object.id}}{{object.brand}}{{object.model}}{{object.generation}}{{object.engine}}</span>
-    </li>
-  </ul>
+  <br>
+  <table align="center">
+    <tr>
+      <th>Car ID</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Generation</th>
+      <th>Engine</th>
+    </tr>
+    <tr *ngFor="let car of cars">
+      <td width="10%">{{car.id}}</td>
+      <td width="20%">{{car.brand}}</td>
+      <td width="20%">{{car.model}}</td>
+      <td width="30%">{{car.generation}}</td>
+      <td width="20%">{{car.engine}}</td>
+    </tr>
+  </table>
   `
 })
 export class ServiceCarListComponent {
@@ -55,3 +82,4 @@ export class ServiceCarListComponent {
     )
   }
 }
+//TO DO: add table view of cars

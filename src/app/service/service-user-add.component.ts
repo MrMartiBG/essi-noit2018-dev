@@ -17,7 +17,9 @@ import { SocketFuncService } from '../socket-func.service';
       </div>
       <div class="form-group">
         <label for="user_type">User Type</label>
-        <input type="text" class="form-control" id="user_type" required [(ngModel)]="user_type" name="user_type">
+        <select class="form-control" id="user_type" required [(ngModel)]="user_type" name="user_type">
+          <option *ngFor="let status of user_type_options" [value]="status">{{status}}</option>
+        </select>
       </div>
       <button type="submit" class="btn btn-create-service" [disabled]="!createServiceUser.form.valid">Add user</button>
     </form>
@@ -28,6 +30,7 @@ export class ServiceUserAddComponent {
   service_id: number;
   user_id: number;
   user_type: string;
+  user_type_options = ['Owner', 'Worker', 'Client']
 
   constructor(private socketFunc: SocketFuncService) { }
   result_callback(info) {

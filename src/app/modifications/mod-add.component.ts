@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SocketFuncService } from '../socket-func.service';
 
 @Component({
@@ -8,24 +8,30 @@ import { SocketFuncService } from '../socket-func.service';
   <div class="container" style="width: 100%; max-width: 250px;">
     <form (ngSubmit)="addMod()" #addModForm="ngForm">
       <div class="form-group">
-        <label for="carId">ID of car</label>
-        <input type="text" class="form-control" id="carId" required [(ngModel)]="carId" name="carId">
+        <label for="carId">Select car</label>
+        <select class="form-control" id="carId" required [(ngModel)]="carId" name="carId">
+          <option *ngFor="let car of cars" [value]="car.id">{{car.id}} {{car.brand}} {{car.model}}</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="serviceId">ID of service</label>
         <input type="text" class="form-control" id="serviceId" required [(ngModel)]="serviceId" name="serviceId">
       </div>
       <div class="form-group">
-        <label for="workStatus">Status of modification<br>(complete, in progress, etc.)</label>
-        <input type="text" class="form-control" id="workStatus" required [(ngModel)]="workStatus" name="workStatus">
+        <label for="workStatus">Status</label>
+        <select class="form-control" id="workStatus" required [(ngModel)]="workStatus" name="workStatus">
+          <option *ngFor="let status of statusOptions" [value]="status">{{status}}</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="mileage">Mileage</label>
         <input type="text" class="form-control" id="mileage" required [(ngModel)]="mileage" name="mileage">
       </div>
       <div class="form-group">
-        <label for="modType">Type of modification<br>(repair, change, add, etc.)</label>
-        <input type="text" class="form-control" id="modType" required [(ngModel)]="modType" name="modType">
+        <label for="modType">Type of modification</label>
+        <select class="form-control" id="modType" required [(ngModel)]="modType" name="modType">
+          <option *ngFor="let mod of modTypeOptions" [value]="mod">{{mod}}</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="modPart">Modified part</label>
@@ -41,6 +47,9 @@ import { SocketFuncService } from '../socket-func.service';
   `
 })
 export class ModAddComponent {
+  cars = [];
+  modTypeOptions = ['Repair', 'Upgrade', 'Change']
+  statusOptions = ['Complete', 'In progress', 'Planned']
   carId: string;
   workStatus: string;
   serviceId: string;
@@ -54,7 +63,17 @@ export class ModAddComponent {
   result(info) {
     console.log(info);
   }
-
+  result_cars(info) {
+    console.log("result_cars", info.info);
+    for(var i = 0 ; i<info.info.length ; i++) {
+      this.cars.push(info.info[i]);
+    }
+  }
+  ngOnInit() {
+    this.socketFunc.fetchMyCars(
+      result_cars => this.result_cars(result_cars)
+    );
+  }
   addMod() {
     this.socketFunc.addModification(
       {//modInfo
@@ -78,6 +97,8 @@ export class ModAddComponent {
     this.carId='';
     this.workStatus='';
     this.serviceId='';
-    this.mileage=0;
+    this.mileage=null;
   }
+
+
 }

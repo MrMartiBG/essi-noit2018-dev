@@ -3,9 +3,10 @@ import * as io from 'socket.io-client';
 export class SocketFuncService {
   private url = "localhost:3030";
   private socket;
+  isLoggedIn = false;
 
   constructor() {
-    this.socket = io();
+    this.socket = io(this.url);
     this.socket.on("server_error", function(info) {
       console.log("server_error", info);
     });
@@ -15,9 +16,11 @@ export class SocketFuncService {
   }
   public loginUser(user, result) {
     this.socket.emit('login_user', user, result);
+    this.isLoggedIn = true;
   }
   public logoutUser(result) {
     this.socket.emit('logout_user', result);
+    this.isLoggedIn = false;
   }
   public addCar(carInfo, result) {
     this.socket.emit('add_car', {brand: carInfo.brand, model: carInfo.model, generation: carInfo.generation, engine: carInfo.engine, vin_number: carInfo.vin}, result);
