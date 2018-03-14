@@ -1,15 +1,38 @@
-<nav class="navbar navbar-sticky-top navbar-dark bg-inverse">
-    <div class="container">
-        <a class="navbar-brand" routerLink="home">ESSI</a>
-        <ul class="nav navbar-nav" routerLinkActive="active">
-            <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="cars" *ngIf="socketFunc.isLoggedIn">My cars</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="service" *ngIf="socketFunc.isLoggedIn">Service</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="modifications" *ngIf="socketFunc.isLoggedIn">Modifications</a></li>
-            <li class="nav-item" style="float: right;"><a class="nav-link" routerLink="login" *ngIf="!socketFunc.isLoggedIn">Login</a></li>
-            <li class="nav-item" style="float: right;"><a class="nav-link" routerLink="register" *ngIf="!socketFunc.isLoggedIn">Register</a></li>
-            <li class="nav-item" style="float: right;"><a class="nav-link" routerLink="login" *ngIf="socketFunc.isLoggedIn" (click)="logoutUser()">Logout</a></li>
-        </ul>
-    </div>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" style="margin-right: 0;">
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="navbar-nav">
+        <a class="nav-link" routerLink="home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="cars" *ngIf="socketFunc.isLoggedIn">My cars</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="service" *ngIf="socketFunc.isLoggedIn">Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="modifications" *ngIf="socketFunc.isLoggedIn">Modifications</a>
+      </li>
+    </ul>
+  </div>
+  <div class="mx-auto order-0">
+    <a class="navbar-brand mx-auto" routerLink="home">ESSI</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" style="float: right;">
+        <a class="nav-link" routerLink="login" *ngIf="!socketFunc.isLoggedIn">Login</a>
+      </li>
+      <li class="nav-item" style="float: right;">
+        <a class="nav-link" routerLink="register" *ngIf="!socketFunc.isLoggedIn">Register</a>
+      </li>
+      <li class="nav-item" style="float: right;">
+        <a class="nav-link" routerLink="login" *ngIf="socketFunc.isLoggedIn" (click)="logoutUser()">Logout</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 <router-outlet></router-outlet>

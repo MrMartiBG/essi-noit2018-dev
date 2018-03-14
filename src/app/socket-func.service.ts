@@ -6,7 +6,7 @@ export class SocketFuncService {
   isLoggedIn = false;
 
   constructor() {
-    this.socket = io();
+    this.socket = io(this.url);
     this.socket.on("server_error", function(info) {
       console.log("server_error", info);
     });
