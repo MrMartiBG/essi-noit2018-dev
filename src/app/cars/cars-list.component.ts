@@ -22,8 +22,8 @@ import { SocketFuncService } from '../socket-func.service';
   </style>
   <h1> Displaying {{cars.length}} car/s</h1>
   <div class="container">
-    <div class="card-group">
-      <div class="card" *ngFor="let car of cars">
+    <div class="card-deck">
+      <div class="card" *ngFor="let car of cars" style="min-width: 280px">
         <div class="card-body">
           <h5 class="card-title">{{car.brand}} {{car.model}}</h5>
           <p class="card-text">Brand: {{car.brand}}</p>
@@ -31,9 +31,15 @@ import { SocketFuncService } from '../socket-func.service';
           <p class="card-text">Generation: {{car.generation}}</p>
           <p class="card-text">Engine: {{car.engine}}</p>
           <p class="card-text">VIN Number: {{car.vin_number}}</p>
-          <button> edit </button>
-          <button> add to service </button>
-          <button> modifications </button>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Actions
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item">Add to service</a>
+              <a class="dropdown-item">Modifications</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

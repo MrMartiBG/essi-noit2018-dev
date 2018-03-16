@@ -3,13 +3,27 @@ import { Component } from '@angular/core';
 @Component({
   template:
   `
-  <nav class="navbar navbar-sticky-top navbar-dark" style="background-color: #595959; color: white;">
-      <div class="container">
-          <ul class="nav navbar-nav" routerLinkActive="active">
-            <li class="nav-item"><a class="nav-link" routerLink="./tools">Service menu</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="./cars">Cars in service</a></li>
-          </ul>
-      </div>
+  <nav class="navbar navbar-expand navbar-dark" style="background-color: #485056;">
+    <ul class="navbar-nav mx-auto" routerLinkActive="active">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="serviceMenuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Service menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="serviceMenuDropdown">
+          <a class="dropdown-item" routerLink="./tools/services">Services</a>
+          <a class="dropdown-item" routerLink="./tools/users">Workers</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="carsMenuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cars in service
+        </a>
+        <div class="dropdown-menu" aria-labelledby="carsMenuDropdown">
+          <a class="dropdown-item" routerLink="./cars/list">List</a>
+          <a class="dropdown-item" routerLink="./cars/add">Add a car</a>
+        </div>
+      </li>
+    </ul>
   </nav>
   <router-outlet></router-outlet>
   `

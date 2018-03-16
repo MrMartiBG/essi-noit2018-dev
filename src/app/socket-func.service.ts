@@ -26,7 +26,7 @@ export class SocketFuncService {
     this.socket.emit('add_car', {brand: carInfo.brand, model: carInfo.model, generation: carInfo.generation, engine: carInfo.engine, vin_number: carInfo.vin}, result);
   }
   public fetchMyCars(result) {
-    this.socket.emit('fetch_my_cars', {}, result);
+    this.socket.emit('fetch_car_current_user', {}, result);
   }
   public fetchCar(car, result) {
     this.socket.emit('fetch_car', {id: car.id}, result);
