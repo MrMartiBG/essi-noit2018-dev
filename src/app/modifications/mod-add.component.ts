@@ -70,7 +70,7 @@ export class ModAddComponent {
     }
   }
   ngOnInit() {
-    this.socketFunc.fetchMyCars(
+    this.socketFunc.fetchUserCars(
       result_cars => this.result_cars(result_cars)
     );
   }

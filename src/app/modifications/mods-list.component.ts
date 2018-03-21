@@ -43,7 +43,7 @@ import { SocketFuncService } from '../socket-func.service';
       <th>Modification description</th>
     </tr>
     <tr *ngFor="let object of mods">
-      <td width="5%">{{object.modification_id}}</td>
+      <td width="5%">{{object.id}}</td>
       <td width="10%">{{object.status}}</td>
       <td width="15%">{{object.mileage}}</td>
       <td width="20%">{{object.date | date}}</td>
@@ -73,7 +73,7 @@ export class ModsListComponent {
     }
   }
   ngOnInit() {
-    this.socketFunc.fetchMyCars(
+    this.socketFunc.fetchUserCars(
       result_cars => this.result_cars(result_cars)
     );
   }

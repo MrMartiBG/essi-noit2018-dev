@@ -38,11 +38,11 @@ import { SocketFuncService } from '../socket-func.service';
       <th>Service email</th>
       <th>Service Mobile</th>
     </tr>
-    <tr *ngFor="let object of services">
-      <td>{{object.name}}</td>
-      <td>{{object.address}}</td>
-      <td>{{object.email}}</td>
-      <td>{{object.mobile}}</td>
+    <tr>
+      <td>{{name}}</td>
+      <td>{{address}}</td>
+      <td>{{email}}</td>
+      <td>{{mobile}}</td>
     </tr>
   </table>
   `
@@ -53,13 +53,15 @@ export class ServiceListServiceComponent {
   email: string;
   mobile: string;
   serviceId: number;
-  services = [];
 
   constructor(private socketFunc: SocketFuncService) { }
 
   result_services(info) {
-    console.log(info);
-    this.services = info.info;
+    console.log(info.info);
+    this.name = info.info.name;
+    this.address = info.info.address;
+    this.email = info.info.email;
+    this.mobile = info.info.mobile;
   }
   fetchServiceInfo() {
     this.socketFunc.fetchServiceInfo(

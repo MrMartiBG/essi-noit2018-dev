@@ -63,7 +63,7 @@ export class ServiceCarListComponent {
     console.log("result_service",info);
     this.carsService = info.info;
     for(var i = 0 ; i < info.info.length ; i++) {
-      this.socketFunc.fetchCar(
+      this.socketFunc.fetchCarService(
         {
           id: info.info[i].car_id
         },
@@ -77,7 +77,6 @@ export class ServiceCarListComponent {
       {
         id: this.service_id
       },
-      {},
       result_service => this.result_service(result_service)
     )
   }
