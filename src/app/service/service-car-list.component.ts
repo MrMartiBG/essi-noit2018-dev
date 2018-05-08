@@ -21,7 +21,7 @@ import { SocketFuncService } from '../socket-func.service';
     }
   </style>
   <h1> You have {{carsService.length}} car/s in this service</h1>
-  <div class="container" style="width: 100%; max-width: 250px;">
+  <div class="container">
     <form (ngSubmit)="update()" #carServiceForm="ngForm">
       <div class="form-group">
         <label for="service_id">ID of your service</label>
@@ -29,24 +29,76 @@ import { SocketFuncService } from '../socket-func.service';
       </div>
       <button type="submit" class="btn btn-update-car-service-list" [disabled]="!carServiceForm.form.valid">Update</button>
     </form>
+    <div class="card border-dark mb-3" *ngFor="let car of cars" style="width: 100%;">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            <h3 style="float: left; ">{{car.brand}} {{car.model}}</h3>
+          </div>
+          <div class="col">
+            <div class="btn-group dropright" role="group" style="float: right;">
+              <button id="carActions" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Service
+              </button>
+              <div class="dropdown-menu" aria-labelledby="carActions">
+                <a class="dropdown-item">Add modification</a>
+                <a class="dropdown-item">Service History</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-4">
+            <img src="../favicon.ico" alt="img_logo_essi" style="width:100%;">
+          </div>
+          <div class="col-8">
+            <div class="row">
+              <div class="col" style="text-align: right;">
+                <p class="card-text">Brand:</p>
+              </div>
+              <div class="col" style="text-align: left;">
+                <p class="card-text">{{car.brand}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" style="text-align: right;">
+                <p class="card-text">Model:</p>
+              </div>
+              <div class="col" style="text-align: left;">
+                <p class="card-text">{{car.model}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" style="text-align: right;">
+                <p class="card-text">Generation:</p>
+              </div>
+              <div class="col" style="text-align: left;">
+                <p class="card-text">{{car.generation}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" style="text-align: right;">
+                <p class="card-text">Engine:</p>
+              </div>
+              <div class="col" style="text-align: left;">
+                <p class="card-text">{{car.engine}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" style="text-align: right;">
+                <p class="card-text">VIN Number:</p>
+              </div>
+              <div class="col" style="text-align: left;">
+                <p class="card-text">{{car.vin_number}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <br>
-  <table align="center">
-    <tr>
-      <th>Car ID</th>
-      <th>Brand</th>
-      <th>Model</th>
-      <th>Generation</th>
-      <th>Engine</th>
-    </tr>
-    <tr *ngFor="let car of cars">
-      <td width="10%">{{car.id}}</td>
-      <td width="20%">{{car.brand}}</td>
-      <td width="20%">{{car.model}}</td>
-      <td width="30%">{{car.generation}}</td>
-      <td width="20%">{{car.engine}}</td>
-    </tr>
-  </table>
   `
 })
 export class ServiceCarListComponent {
