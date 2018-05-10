@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { FormLoginComponent } from './forms/form-login.component';
 import { SocketFuncService } from './socket-func.service';
 import { FormRegisterComponent } from './forms/form-register.component';
+import { FormForgotComponent } from './forms/form-forgot.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CarsModule } from './cars/cars.module';
@@ -23,6 +24,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     FormLoginComponent,
     FormRegisterComponent,
+    FormForgotComponent,
     NavMenuComponent,
     HomeComponent,
     NotFoundComponent

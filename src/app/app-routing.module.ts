@@ -2,6 +2,7 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormLoginComponent } from './forms/form-login.component';
 import { FormRegisterComponent } from './forms/form-register.component';
+import { FormForgotComponent } from './forms/form-forgot.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found.component';
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: FormRegisterComponent
+  },
+  {
+    path: 'forgot',
+    component: FormForgotComponent
   },
   {
      path: '',

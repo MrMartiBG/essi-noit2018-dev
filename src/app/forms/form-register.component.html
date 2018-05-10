@@ -1,0 +1,66 @@
+<div class="card mx-auto" style="margin-top: 30px; width: 100%; max-width: 650px; font-size: 125%;">
+  <div class="card-body">
+    <div class="alert alert-warning alert-dismissible fade show text-center" role="alert" style="margin-top:15px;">
+      <p>Fill in the form below and after clicking the button we will send you an automatically generated password at the provided email.</p>
+      <hr>
+      <p>You can change is after you first login in:<br>
+      <strong>"My profile" -> "Profile data" -> "New password"</strong></p>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link disabled" id="pills-user-tab" data-toggle="pill" href="#pills-user" role="tab" aria-controls="pills-user" aria-selected="true">I want to register as:</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-user-tab" data-toggle="pill" href="#pills-user" role="tab" aria-controls="pills-user" aria-selected="true">a user!</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-shop-tab" data-toggle="pill" href="#pills-shop" role="tab" aria-controls="pills-shop" aria-selected="false">a workshop!</a>
+      </li>
+    </ul>
+    <div class="tab-content text-center text-sm-right" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-user" role="tabpanel" aria-labelledby="pills-user-tab">
+        <form (ngSubmit)="registerUser()" #userRegForm="ngForm">
+          <div class="form-group row">
+            <label for="fName" class="col-sm-4 col-form-label">My name is:</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="fName" required [(ngModel)]="fName" name="fName">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="lName" class="col-sm-4 col-form-label">My last name is:</label>
+            <div class="col-sm-8">
+              <input type="lName" class="form-control" id="lName" required [(ngModel)]="lName" name="lName">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="usEmail" class="col-sm-4 col-form-label">My email is:</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="usEmail" required [(ngModel)]="usEmail" name="usEmail">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-reg-user" [disabled]="!userRegForm.form.valid">I'm done, send me my password!</button>
+        </form>
+      </div>
+      <div class="tab-pane fade" id="pills-shop" role="tabpanel" aria-labelledby="pills-shop-tab">
+        <form (ngSubmit)="registerShop()" #shopRegForm="ngForm">
+          <div class="form-group row">
+            <label for="shName" class="col-sm-4 col-form-label">Name of workshop:</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="shName" required [(ngModel)]="shName" name="shName">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="shEmail" class="col-sm-4 col-form-label">Workshop email:</label>
+            <div class="col-sm-8">
+              <input type="shEmail" class="form-control" id="shEmail" required [(ngModel)]="shEmail" name="shEmail">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-reg-shop" [disabled]="!shopRegForm.form.valid">I'm done, send me my password!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,52 +3,42 @@ import { SocketFuncService } from '../socket-func.service';
 
 @Component({
   selector: 'app-form-login',
-  template:
-  `
-  <br>
-  <div class="container" style="width: 100%; max-width: 250px;" *ngIf="!socketFunc.isLoggedIn">
-    <form (ngSubmit)="loginUser()" #userLoginForm="ngForm">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" id="username" required [(ngModel)]="username" name="username">
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" required [(ngModel)]="password" name="password">
-      </div>
-      <div style="wodth: 100%;">
-        <button type="submit" class="btn btn-login-user" [disabled]="!userLoginForm.form.valid">Login!</button>
-        <a routerLink="/register"><button class="btn btn-form-reg">Register now!</button></a>
-      </div>
-    </form>
-  </div>
-  <button type="button" class="btn btn-logout-user" *ngIf="socketFunc.isLoggedIn" (click)="logoutUser()">Logout!</button>
-  `
+  templateUrl: './form-login.component.html'
 })
 export class FormLoginComponent {
-  username: string;
+  email: string;
   password: string;
 
   constructor(public socketFunc: SocketFuncService) { }
 
-  result(info) {
+  result_login(info) {
     console.log(info);
+    if(info.status == "successful"){
+      this.socketFunc.isLoggedIn = true;
+    }
+  }
+
+  result_logout(info) {
+    console.log(info);
+    if(info.status == "successful"){
+      this.socketFunc.isLoggedIn = false;
+    }
   }
 
   loginUser() {
     this.socketFunc.loginUser(
       {
-        username: this.username,
+        email: this.email,
         password: this.password
       },
-      this.result
+      result_login => this.result_login(result_login)
     );
-    this.username='';
+    this.email='';
     this.password='';
   }
   logoutUser() {
     this.socketFunc.logoutUser(
-      this.result
+      result_logout => this.result_logout(result_logout)
     )
   }
 }

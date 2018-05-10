@@ -1,36 +1,48 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" style="margin-right: 0;">
-    <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <li class="navbar-nav" data-toggle="collapse" data-target=".navbar-collapse.show">
-        <a class="nav-link" routerLink="home">Home</a>
+  <a class="navbar-brand mr-auto" routerLink="home">USSH</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse w-100 order-2 dual-collapse2" data-toggle="collapse" data-target=".navbar-collapse.show" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mx-auto" routerLinkActive="active">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="carsMenuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cars
+        </a>
+        <div class="dropdown-menu" aria-labelledby="carsMenuDropdown">
+          <a class="dropdown-item" routerLink="">Search public cars</a>
+          <a class="dropdown-item" routerLink="" *ngIf="socketFunc.isLoggedIn">My cars</a>
+          <a class="dropdown-item" routerLink="" *ngIf="socketFunc.isLoggedIn">Add car</a>
+          <a class="dropdown-item" routerLink="cars/list">Old cars list</a>
+        </div>
       </li>
-      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-        <a class="nav-link" routerLink="cars/list" *ngIf="socketFunc.isLoggedIn">My cars</a>
-      </li>
-      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-        <a class="nav-link" routerLink="service" *ngIf="socketFunc.isLoggedIn">Service</a>
-      </li>
-      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-        <a class="nav-link" routerLink="modifications" *ngIf="socketFunc.isLoggedIn">Modifications</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="workshopMenuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Workshop
+        </a>
+        <div class="dropdown-menu" aria-labelledby="workshopMenuDropdown">
+          <a class="dropdown-item" routerLink="" *ngIf="!socketFunc.isLoggedIn">Please login first!</a>
+          <a class="dropdown-item" routerLink="" *ngIf="socketFunc.isLoggedIn">My workshops</a>
+          <a class="dropdown-item" routerLink="" *ngIf="socketFunc.isLoggedIn">Add car to workshop</a>
+          <a class="dropdown-item" routerLink="service">Old service</a>
+          <a class="dropdown-item" routerLink="modifications">Old modifications</a>
+        </div>
       </li>
     </ul>
   </div>
-  <div class="mx-auto order-0" data-toggle="collapse" data-target=".navbar-collapse.show">
-    <a class="navbar-brand mx-auto" routerLink="home">ESSI</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" data-toggle="collapse" data-target=".navbar-collapse.show" id="navbarTogglerDemo03">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item" style="float: right;" data-toggle="collapse" data-target=".navbar-collapse.show">
-        <a class="nav-link" routerLink="login" *ngIf="!socketFunc.isLoggedIn">Login</a>
-      </li>
-      <li class="nav-item" style="float: right;" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <li class="nav-item">
         <a class="nav-link" routerLink="register" *ngIf="!socketFunc.isLoggedIn">Register</a>
       </li>
-      <li class="nav-item" style="float: right;" data-toggle="collapse" data-target=".navbar-collapse.show">
-        <a class="nav-link" routerLink="login" *ngIf="socketFunc.isLoggedIn" (click)="logoutUser()">Logout</a>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="login" *ngIf="!socketFunc.isLoggedIn">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="" *ngIf="socketFunc.isLoggedIn">My profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="" *ngIf="socketFunc.isLoggedIn" (click)="logoutUser()">Logout</a>
       </li>
     </ul>
   </div>

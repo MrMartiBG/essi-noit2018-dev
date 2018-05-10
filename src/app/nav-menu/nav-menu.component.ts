@@ -13,13 +13,16 @@ export class NavMenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  result(info) {
+  result_logout(info) {
     console.log(info);
+    if(info.status == "successful"){
+      this.socketFunc.isLoggedIn = false;
+    }
   }
 
   logoutUser() {
     this.socketFunc.logoutUser(
-      this.result
+      result_logout => this.result_logout(result_logout)
     )
   }
 }

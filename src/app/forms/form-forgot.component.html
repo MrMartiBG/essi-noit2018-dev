@@ -1,0 +1,16 @@
+<div class="card text-center text-sm-right mx-auto" style="margin-top: 30px; width: 100%; max-width: 650px; font-size: 125%;">
+  <div class="card-body">
+    <p class="text-center">
+      We know how easy it is to forget something, so we got you covered. Just type in the email you provided when you registered and we will send you a new password.
+    </p>
+    <form (ngSubmit)="forgotPass()" #userForgotForm="ngForm">
+      <div class="form-group row">
+        <label for="email" class="col-sm-4 col-form-label">Email:</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="email" required [(ngModel)]="email" name="email">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-login-user" [disabled]="!userForgotForm.form.valid">Send me a new password!</button>
+    </form>
+  </div>
+</div>

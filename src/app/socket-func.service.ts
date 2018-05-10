@@ -14,13 +14,17 @@ export class SocketFuncService {
   public registerUser(user, result) {
     this.socket.emit('register_user', user, result);
   }
+  public registerShop(user, result) {
+    this.socket.emit('register_service', user, result);
+  }
+  public resetPassword(user, result) {
+    this.socket.emit('generate_new_password', user, result);
+  }
   public loginUser(user, result) {
-    this.socket.emit('login_user', user, result);
-    this.isLoggedIn = true;
+    this.socket.emit('login_account', user, result);
   }
   public logoutUser(result) {
-    this.socket.emit('logout_user',{}, result);
-    this.isLoggedIn = false;
+    this.socket.emit('logout_account',{}, result);
   }
   public addCar(carInfo, result) {
     this.socket.emit('add_car', {brand: carInfo.brand, model: carInfo.model, generation: carInfo.generation, engine: carInfo.engine, vin_number: carInfo.vin}, result);

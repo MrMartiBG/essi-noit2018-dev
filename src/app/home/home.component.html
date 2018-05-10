@@ -1,18 +1,157 @@
-<h1>Welcome to {{title}}!</h1>
-<div class="card border-danger mb-3 mx-auto" style="text-align: center; max-width: 600px;">
-  <div class="card-header">Внимание!</div>
-  <div class="card-body text-danger">
-    <h5 class="card-title">Проектът е в ранен етап на развитие!</h5>
-    <p class="card-text">Не всички функционалности работят така,
-      както са предназначени. Молим ви да не оставяте каквито и да е чуствителни данни,
-      тъй като те могат потенциално да попаднат в хора със злонамерени намерения.</p>
+<div class="container-fluid">
+  <h1 style="margin-top:30px; margin-bottom:30px;">Welcome to {{title}}!</h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card border-danger mb-3 mx-auto" style="text-align: center; max-width: 600px;">
+        <div class="card-header">Внимание!</div>
+        <div class="card-body text-danger">
+          <h5 class="card-title">Проектът е в ранен етап на развитие!</h5>
+          <p class="card-text">Не всички функционалности работят така,
+            както са предназначени. Молим ви да не оставяте каквито и да е чуствителни данни,
+            тъй като те могат потенциално да попаднат в хора със злонамерени намерения.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card border-danger mb-3 mx-auto" style="text-align: center; max-width: 600px;">
+        <div class="card-header">Warning!</div>
+        <div class="card-body text-danger">
+          <h5 class="card-title">The project is in early stages of development!</h5>
+          <p class="card-text">Not all features are working as expected. We ask you not to leave any sensitive data,
+            as it could potentionally be accessed by people with maous intent.</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<div class="card border-danger mb-3 mx-auto" style="text-align: center; max-width: 600px;">
-  <div class="card-header">Warning!</div>
-  <div class="card-body text-danger">
-    <h5 class="card-title">The project is in early stages of development!</h5>
-    <p class="card-text">Not all features are working as expected. We ask you not to leave any sensitive data,
-      as it could potentionally be accessed by people with malicious intent.</p>
+<!--
+  <div class="row">
+    <div class="col-3">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-item nav-link active" id="v-pills-whatIs-tab" data-toggle="pill" href="#v-pills-whatIs" role="tab" aria-controls="v-pills-whatIs" aria-selected="true">What is USSH</a>
+        <a class="nav-item nav-link" id="v-pills-idea-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-idea" aria-selected="false">The idea</a>
+        <a class="nav-item nav-link" id="v-pills-milestones-tab" data-toggle="pill" href="#v-pills-milestones" role="tab" aria-controls="v-pills-milestones" aria-selected="false">Milestones</a>
+        <a class="nav-item nav-link" id="v-pills-faq-tab" data-toggle="pill" href="#v-pills-faq" role="tab" aria-controls="v-pills-faq" aria-selected="false">FAQ</a>
+        <a class="nav-item nav-link" id="v-pills-help-tab" data-toggle="pill" href="#v-pills-help" role="tab" aria-controls="v-pills-help" aria-selected="false">Help</a>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-whatIs" role="tabpanel" aria-labelledby="v-pills-whatIs-tab">
+          Coming soon...
+        </div>
+        <div class="tab-pane fade" id="v-pills-idea" role="tabpanel" aria-labelledby="v-pills-idea-tab">
+          Coming soon...
+        </div>
+        <div class="tab-pane fade" id="v-pills-milestones" role="tabpanel" aria-labelledby="v-pills-milestones-tab">
+          Coming soon...
+        </div>
+        <div class="tab-pane fade" id="v-pills-faq" role="tabpanel" aria-labelledby="v-pills-faq-tab">
+          Coming soon...
+        </div>
+        <div class="tab-pane fade" id="v-pills-help" role="tabpanel" aria-labelledby="v-pills-help-tab">
+          Coming soon...
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+  <div class="row">
+    <div class="col-sm">
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingWhat">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseWhat" aria-expanded="true" aria-controls="collapseWhat">
+                What is USSH
+              </button>
+            </h5>
+          </div>
+          <div id="collapseWhat" class="collapse show" aria-labelledby="headingWhat" data-parent="#accordion">
+            <div class="card-body">
+              Comming soon...
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingIdea">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseIdea" aria-expanded="false" aria-controls="collapseIdea">
+                The idea
+              </button>
+            </h5>
+          </div>
+          <div id="collapseIdea" class="collapse" aria-labelledby="headingIdea" data-parent="#accordion">
+            <div class="card-body">
+              Comming soon...
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingMile">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseMile" aria-expanded="false" aria-controls="collapseMile">
+                Milestones
+              </button>
+            </h5>
+          </div>
+          <div id="collapseMile" class="collapse" aria-labelledby="headingMile" data-parent="#accordion">
+            <div class="card-body">
+              Comming soon...
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingFAQ">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFAQ" aria-expanded="false" aria-controls="collapseFAQ">
+                FAQ
+              </button>
+            </h5>
+          </div>
+          <div id="collapseFAQ" class="collapse" aria-labelledby="headingFAQ" data-parent="#accordion">
+            <div class="card-body">
+              Comming soon...
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingHelp">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseHelp" aria-expanded="false" aria-controls="collapseHelp">
+                Help
+              </button>
+            </h5>
+          </div>
+          <div id="collapseHelp" class="collapse" aria-labelledby="headingHelp" data-parent="#accordion">
+            <div class="card-body">
+              Comming soon...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <h5 class="card-header">
+          News & Updates
+        </h5>
+        <div class="card-body">
+          <h5 class="card-title">
+            Special title treatment
+          </h5>
+          <p class="card-text">
+            With supporting text below as a natural lead-in to additional content.
+          </p>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">
+            Special title treatment
+          </h5>
+          <p class="card-text">
+            With supporting text below as a natural lead-in to additional content.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
