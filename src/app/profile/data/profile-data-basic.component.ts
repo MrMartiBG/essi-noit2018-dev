@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { SocketFuncService } from '../socket-func.service';
+import { SocketFuncService } from '../../socket-func.service';
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile-data.component.html'
+  templateUrl: './profile-data-basic.component.html'
 })
-export class ProfileDataComponent implements OnInit {
+export class ProfileDataBasicComponent implements OnInit {
   accInfoUser = {};
   password: string;
   fName: string;

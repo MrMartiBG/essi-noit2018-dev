@@ -1,0 +1,11 @@
+<form (ngSubmit)="updateAccUser()" #updatePassword="ngForm">
+  <div class="form-group row">
+    <label for="password" class="col-sm-4 col-form-label">New password:</label>
+    <div class="col-sm-8">
+      <input type="password" class="form-control" id="password" value={{accInfoUser.password}} required [(ngModel)]="password" name="password">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-update-acc" [disabled]="!updatePassword.form.valid" data-toggle="modal" data-target="#loginModal">
+    Update password!
+  </button>
+</form>

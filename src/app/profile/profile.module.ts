@@ -7,8 +7,15 @@ import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatInputModule, 
 
 import { SocketFuncService } from '../socket-func.service';
 import { ProfileComponent } from './profile.component';
-import { ProfileDataComponent } from './profile-data.component';
-import { ProfileCarsComponent } from './profile-cars.component';
+import { ProfileDataComponent } from './data/profile-data.component';
+import { ProfileDataBasicComponent } from './data/profile-data-basic.component';
+import { ProfileDataAdditionalComponent } from './data/profile-data-additional.component';
+import { ProfileDataPassComponent } from './data/profile-data-pass.component';
+import { ProfileCarsComponent } from './cars/profile-cars.component';
+import { ProfileCarsListComponent } from './cars/profile-cars-list.component';
+import { ProfileCarsAddComponent } from './cars/profile-cars-add.component';
+import { ProfileCarsEditComponent } from './cars/profile-cars-edit.component';
+import { ProfileCarsShopComponent } from './cars/profile-cars-shop.component';
 import { ProfileModsComponent } from './profile-mods.component';
 import { ProfileNotifComponent } from './profile-notif.component';
 import { ProfileRoutingModule } from './profile-routing.module';
@@ -17,9 +24,16 @@ import { ProfileRoutingModule } from './profile-routing.module';
   declarations: [
     ProfileComponent,
     ProfileCarsComponent,
+    ProfileCarsListComponent,
+    ProfileCarsAddComponent,
+    ProfileCarsEditComponent,
+    ProfileCarsShopComponent,
     ProfileModsComponent,
     ProfileNotifComponent,
-    ProfileDataComponent
+    ProfileDataComponent,
+    ProfileDataBasicComponent,
+    ProfileDataAdditionalComponent,
+    ProfileDataPassComponent
   ],
   imports: [
     BrowserModule,

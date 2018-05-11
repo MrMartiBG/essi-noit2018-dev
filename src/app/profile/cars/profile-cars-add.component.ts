@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { SocketFuncService } from '../socket-func.service';
+import { SocketFuncService } from '../../socket-func.service';
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile-cars.component.html'
+  templateUrl: './profile-cars-add.component.html'
 })
-export class ProfileCarsComponent implements OnInit {
+export class ProfileCarsAddComponent implements OnInit {
   cars = [];
   constructor(private socketFunc: SocketFuncService) { }
   result(info) {

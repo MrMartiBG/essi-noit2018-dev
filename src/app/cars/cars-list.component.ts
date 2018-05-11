@@ -89,8 +89,9 @@ export class CarsListComponent {
     console.log(this.cars);
   }
   ngOnInit() {
+    /*
     this.socketFunc.fetchUserCars(
       result => this.result(result)
-    );
+    );*/
   }
 }

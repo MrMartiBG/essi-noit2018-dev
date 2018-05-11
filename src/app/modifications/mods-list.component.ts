@@ -73,7 +73,7 @@ export class ModsListComponent {
     }
   }
   ngOnInit() {
-    this.socketFunc.fetchUserCars(
+    /*this.socketFunc.fetchUserCars(
       result_cars => this.result_cars(result_cars)
     );
   }
@@ -83,6 +83,6 @@ export class ModsListComponent {
         id: this.carId
       },
       result => this.result(result)
-    );
+    );*/
   }
 }

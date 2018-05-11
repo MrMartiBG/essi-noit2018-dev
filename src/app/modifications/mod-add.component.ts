@@ -69,7 +69,7 @@ export class ModAddComponent {
       this.cars.push(info.info[i]);
     }
   }
-  ngOnInit() {
+  ngOnInit() {/*
     this.socketFunc.fetchUserCars(
       result_cars => this.result_cars(result_cars)
     );
@@ -97,7 +97,7 @@ export class ModAddComponent {
     this.carId='';
     this.workStatus='';
     this.serviceId='';
-    this.mileage=null;
+    this.mileage=null;*/
   }
 
 
