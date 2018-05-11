@@ -16,6 +16,7 @@ import { CarsModule } from './cars/cars.module';
 import { ServiceModule } from './service/service.module';
 import { ModificationsModule } from './modifications/mods.module';
 import { NotFoundComponent } from './not-found.component';
+import { ProfileModule } from './profile/profile.module';
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -41,6 +42,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     CarsModule,
     ServiceModule,
+    ProfileModule,
     ModificationsModule,
     AppRoutingModule
   ],

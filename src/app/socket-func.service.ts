@@ -26,11 +26,17 @@ export class SocketFuncService {
   public logoutUser(result) {
     this.socket.emit('logout_account',{}, result);
   }
+  public getDataUser(result) {
+    this.socket.emit('get_data_this_user',{}, result);
+  }
+  public updateDataUser(user, result) {
+    this.socket.emit('set_data_this_user', user, result);
+  }
   public addCar(carInfo, result) {
     this.socket.emit('add_car', {brand: carInfo.brand, model: carInfo.model, generation: carInfo.generation, engine: carInfo.engine, vin_number: carInfo.vin}, result);
   }
-  public fetchUserCars(result) {
-    this.socket.emit('fetch_car_current_user', {}, result);
+  public getCarsUser(result) {
+    this.socket.emit('get_cars_this_user', {}, result);
   }
   public fetchCar(car, result) {
     this.socket.emit('fetch_car_public', {id: car.id}, result);

@@ -4,20 +4,49 @@
       <div class="form-group row">
         <label for="email" class="col-sm-4 col-form-label">Email:</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="email" required [(ngModel)]="email" name="email">
+          <input type="text" class="form-control" id="email" required [(ngModel)]="email" name="email" *ngIf="!socketFunc.isLoggedIn">
+          <input type="text" class="form-control" placeholder="Already logged in!" readonly *ngIf="socketFunc.isLoggedIn">
         </div>
       </div>
       <div class="form-group row">
         <label for="password" class="col-sm-4 col-form-label">Password:</label>
         <div class="col-sm-8">
-          <input type="password" class="form-control" id="password" required [(ngModel)]="password" name="password">
+          <input type="password" class="form-control" id="password" required [(ngModel)]="password" name="password" *ngIf="!socketFunc.isLoggedIn">
+          <input type="text" class="form-control" placeholder="Already logged in!" readonly *ngIf="socketFunc.isLoggedIn">
         </div>
       </div>
-      <button type="submit" class="btn btn-login-user" [disabled]="!userLoginForm.form.valid">Login!</button>
+      <button type="submit" class="btn btn-login-user" [disabled]="!userLoginForm.form.valid" *ngIf="!socketFunc.isLoggedIn" data-toggle="modal" data-target="#loginModal">
+        Login!
+      </button>
+      <button (click)="logoutUser()" class="btn btn-logout-user" *ngIf="socketFunc.isLoggedIn">
+        Logout!
+      </button>
     </form>
   </div>
 </div>
 <div class="container" style="font-size: 125%; margin-top: 10px;">
-  <button type="button" class="btn btn-secondary" routerLink="/forgot">I forgot my password!</button>
-  <button type="button" class="btn btn-secondary" routerLink="/register">Register here!</button>
+  <button type="button" class="btn btn-secondary" routerLink="/forgot" *ngIf="!socketFunc.isLoggedIn">I forgot my password!</button>
+  <button type="button" class="btn btn-secondary" routerLink="/register" *ngIf="!socketFunc.isLoggedIn">Register here!</button>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" *ngIf="socketFunc.isLoggedIn">
+        Login successful! You can now use USSH!
+      </div>
+      <div class="modal-body" *ngIf="!socketFunc.isLoggedIn">
+        Something went wrong! Try again and if the problem persists contact us!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" routerLink="/home" *ngIf="socketFunc.isLoggedIn">Go to home page!</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" *ngIf="!socketFunc.isLoggedIn">Close</button>
+      </div>
+    </div>
+  </div>
 </div>

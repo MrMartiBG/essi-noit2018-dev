@@ -7,6 +7,6 @@ import { SocketFuncService } from './socket-func.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ESSI';
+  title = 'USSH';
   constructor(private socketFunc: SocketFuncService) { }
 }
