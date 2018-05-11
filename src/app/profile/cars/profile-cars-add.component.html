@@ -1,3 +1,55 @@
-<p>
-  add works
-</p>
+<h1> Add a car </h1>
+<form (ngSubmit)="addCar()" #carAddForm="ngForm">
+  <div class="form-group row">
+    <label for="make" class="col-sm-4 col-form-label">Make:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="make" required [(ngModel)]="make" name="make">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="model" class="col-sm-4 col-form-label">Model:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="model" required [(ngModel)]="model" name="model">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="generation" class="col-sm-4 col-form-label">Generation:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="generation" required [(ngModel)]="generation" name="generation">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="engine" class="col-sm-4 col-form-label">Engine:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="engine" required [(ngModel)]="engine" name="engine">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="vin_number" class="col-sm-4 col-form-label">VIN Number:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="vin_number" required [(ngModel)]="vin_number" name="vin_number">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="registration_number" class="col-sm-4 col-form-label">Reg. number:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="registration_number" required [(ngModel)]="registration_number" name="registration_number">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="public" class="col-sm-4 col-form-label">Display publicly:</label>
+    <div class="col-sm-8">
+      <select type="text" class="form-control" id="public" required [(ngModel)]="public" name="public">
+        <option value="0">Nah</option>
+        <option value="1">Yes!</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="info" class="col-sm-4 col-form-label">Comments & additional info:</label>
+    <div class="col-sm-8">
+      <textarea type="text" class="form-control" id="info" required [(ngModel)]="info" name="info"></textarea>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-add-car" [disabled]="!carAddForm.form.valid">Add car</button>
+</form>

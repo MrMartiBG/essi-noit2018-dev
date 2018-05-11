@@ -16,7 +16,9 @@ import { ProfileCarsListComponent } from './cars/profile-cars-list.component';
 import { ProfileCarsAddComponent } from './cars/profile-cars-add.component';
 import { ProfileCarsEditComponent } from './cars/profile-cars-edit.component';
 import { ProfileCarsShopComponent } from './cars/profile-cars-shop.component';
-import { ProfileModsComponent } from './profile-mods.component';
+import { ProfileModsComponent } from './mods/profile-mods.component';
+import { ProfileModsListComponent } from './mods/profile-mods-list.component';
+import { ProfileModsAddComponent } from './mods/profile-mods-add.component';
 import { ProfileNotifComponent } from './profile-notif.component';
 import { ProfileRoutingModule } from './profile-routing.module';
 
@@ -29,6 +31,8 @@ import { ProfileRoutingModule } from './profile-routing.module';
     ProfileCarsEditComponent,
     ProfileCarsShopComponent,
     ProfileModsComponent,
+    ProfileModsListComponent,
+    ProfileModsAddComponent,
     ProfileNotifComponent,
     ProfileDataComponent,
     ProfileDataBasicComponent,

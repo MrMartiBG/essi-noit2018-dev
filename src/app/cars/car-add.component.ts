@@ -38,6 +38,8 @@ export class CarAddComponent {
   generation: string;
   engine: string;
   vin: string;
+  reg_num: string;
+  info: string;
 
   constructor(private socketFunc: SocketFuncService) { }
 

@@ -33,7 +33,7 @@ export class SocketFuncService {
     this.socket.emit('set_data_this_user', user, result);
   }
   public addCar(carInfo, result) {
-    this.socket.emit('add_car', {brand: carInfo.brand, model: carInfo.model, generation: carInfo.generation, engine: carInfo.engine, vin_number: carInfo.vin}, result);
+    this.socket.emit('add_car_this_user', carInfo, result);
   }
   public getCarsUser(result) {
     this.socket.emit('get_cars_this_user', {}, result);

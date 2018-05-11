@@ -6,16 +6,9 @@ import { SocketFuncService } from '../../socket-func.service';
   templateUrl: './profile-cars.component.html'
 })
 export class ProfileCarsComponent implements OnInit {
-  cars = [];
-  constructor(private socketFunc: SocketFuncService) { }
-  result(info) {
-    console.log(info);
-    this.cars = info.info;
-    console.log(this.cars);
-  }
+
+  constructor() { }
+
   ngOnInit() {
-    this.socketFunc.getCarsUser(
-      result => this.result(result)
-    );
   }
 }

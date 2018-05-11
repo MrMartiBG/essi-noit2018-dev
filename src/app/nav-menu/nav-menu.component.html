@@ -11,8 +11,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="carsMenuDropdown">
           <a class="dropdown-item" routerLink="">Search public cars</a>
-          <a class="dropdown-item" routerLink="" *ngIf="socketFunc.isLoggedIn">My cars</a>
-          <a class="dropdown-item" routerLink="" *ngIf="socketFunc.isLoggedIn">Add car</a>
+          <a class="dropdown-item" routerLink="profile/cars/list" *ngIf="socketFunc.isLoggedIn">My cars</a>
+          <a class="dropdown-item" routerLink="profile/cars/add" *ngIf="socketFunc.isLoggedIn">Add car</a>
           <a class="dropdown-item" routerLink="cars/list">Old cars list</a>
         </div>
       </li>
