@@ -6,7 +6,7 @@ import { SocketFuncService } from '../../socket-func.service';
   templateUrl: './profile-data-pass.component.html'
 })
 export class ProfileDataPassComponent implements OnInit {
-  accInfoUser = {};
+  accInfoUser = {password: null};
   password: string;
   fName: string;
   lName: string;

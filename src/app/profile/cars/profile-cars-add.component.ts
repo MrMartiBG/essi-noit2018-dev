@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SocketFuncService } from '../../socket-func.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile-cars-add.component.html'
 })
-export class ProfileCarsAddComponent implements OnInit {
+export class ProfileCarsAddComponent {
   make: string;
   model: string;
   generation: string;
@@ -41,7 +41,7 @@ export class ProfileCarsAddComponent implements OnInit {
     this.engine='';
     this.vin_number='';
     this.registration_number='';
-    this.public='';
+    this.public=null;
     this.info='';
   }
 }

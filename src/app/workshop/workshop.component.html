@@ -1,0 +1,37 @@
+<div class="container" style="margin-top: 30px;">
+  <form (ngSubmit)="setShopSession()" #setShop="ngForm">
+    <div class="form-group row">
+      <div class="col-3">
+        <h4> Select service to work from:</h4>
+      </div>
+      <div class="col-7">
+        <select class="form-control" id="shopID" required [(ngModel)]="shop_selection" name="shopID">
+          <option *ngFor="let shop of shops" [ngValue]="shop">ID: {{shop.account_service_id}} {{shop.name}}</option>
+        </select>
+      </div>
+      <div class="col-2">
+        <button  type="submit" class="btn btn-primary">Set workshop!</button>
+      </div>
+    </div>
+  </form>
+  <div class="container" style="margin-top: 30px;" *ngIf="this.socketFunc.current_service">
+    <ul class="nav nav-tabs justify-content-end" style="font-size: 150%; font-weight: bold;">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="cars">
+          Cars in shop
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="mods">
+          Modifications
+        </a>
+      </li>
+      <!--<li class="nav-item">
+        <a class="nav-link" routerLink="./notif">
+          Notifications
+        </a>
+      </li>-->
+    </ul>
+    <router-outlet></router-outlet>
+  </div>
+</div>

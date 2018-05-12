@@ -9,6 +9,8 @@ export class FormRegisterComponent {
   usEmail: string;
   fName: string;
   lName: string;
+  shEmail: string;
+  shName: string;
 
   constructor(private socketFunc: SocketFuncService) { }
 

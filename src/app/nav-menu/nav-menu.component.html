@@ -22,7 +22,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="workshopMenuDropdown">
           <a class="dropdown-item" routerLink="" *ngIf="!socketFunc.isLoggedIn">Please login first!</a>
-          <a class="dropdown-item" routerLink="" *ngIf="socketFunc.isLoggedIn">My workshops</a>
+          <a class="dropdown-item" routerLink="workshop" *ngIf="socketFunc.isLoggedIn">My workshops</a>
           <a class="dropdown-item" routerLink="" *ngIf="socketFunc.isLoggedIn">Add car to workshop</a>
           <a class="dropdown-item" routerLink="service">Old service</a>
           <a class="dropdown-item" routerLink="modifications">Old modifications</a>

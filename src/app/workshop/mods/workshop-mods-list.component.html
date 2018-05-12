@@ -1,27 +1,25 @@
 <div class="container">
-  <div class="card border-dark mb-3" style="width: 100%;" *ngFor="let mod of mods">
-    <div class="card-header">
-      <div class="row">
-        <div class="col-1" style="padding: 0px; text-align: right;">
-          <h4>Car:</h4>
-        </div>
-        <div class="col-5" style="padding-right: 0px;">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Audi A6 Allroad" readonly>
-          </div>
-        </div>
-        <div class="col-3" style="padding-right: 0px;">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="CA9005TX" readonly>
-          </div>
-        </div>
-        <div class="col-3" style="padding-right: 0px;">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="ID: 3244156" readonly>
-          </div>
-        </div>
+  <form (ngSubmit)="getModsCar()" #setCar="ngForm">
+    <div class="form-group row">
+      <div class="col-4">
+        <h4> Select car:</h4>
+      </div>
+      <div class="col-8">
+        <select class="form-control" id="carID" required [(ngModel)]="car_selection" name="carID">
+          <option *ngFor="let car of cars" [ngValue]="car">ID: {{car.car_id}} {{car.make}} {{car.model}} {{car.registration_number}}</option>
+        </select>
       </div>
     </div>
+    <div class="form-group row">
+      <div class="col"></div>
+      <div class="col">
+        <button  type="submit" class="btn btn-get-mods" style="width: 100%;">
+          Get car modifications!
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="card border-dark mb-3" style="width: 100%;" *ngFor="let mod of mods">
     <div class="card-body">
       <div class="row">
         <div class="col-6">
@@ -72,17 +70,17 @@
                   <div class="row">
                     <div class="col-6">
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Audi A6 Allroad" readonly>
+                        <input type="text" class="form-control" placeholder="{{car_selection.make}} {{car_selection.model}}" readonly>
                       </div>
                     </div>
                     <div class="col-3">
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="CA9005TX" readonly>
+                        <input type="text" class="form-control" placeholder="{{car_selection.registration_number}}" readonly>
                       </div>
                     </div>
                     <div class="col-3">
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="ID: 3244156" readonly>
+                        <input type="text" class="form-control" placeholder="ID: {{car_selection.car_id}}" readonly>
                       </div>
                     </div>
                   </div>
@@ -94,48 +92,47 @@
                   <div class="row">
                     <div class="col-6">
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Type: {{mod.type}}">
+                        <input type="text" class="form-control" placeholder="Type: {{mod.type}}" readonly>
                       </div>
                     </div>
                     <div class="col-6">
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Zone: {{mod.zone}}">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Date: {{mod.date}}">
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Kilometers: {{mod.mileage}}">
+                        <input type="text" class="form-control" placeholder="Zone: {{mod.zone}}" readonly>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-6">
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Part: {{mod.part}}">
+                        <input type="text" class="form-control" placeholder="Date: {{mod.date}}" readonly>
                       </div>
                     </div>
                     <div class="col-6">
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Make & Model: {{mod.part_make}}">
+                        <input type="text" class="form-control" placeholder="Kilometers: {{mod.mileage}}" readonly>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Part: {{mod.part}}" readonly>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Make & Model: {{mod.part_make}}" readonly>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <textarea class="form-control" rows="4" placeholder="{{mod.info}}"></textarea>
+                      <textarea class="form-control" rows="4" placeholder="{{mod.info}}" readonly></textarea>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>

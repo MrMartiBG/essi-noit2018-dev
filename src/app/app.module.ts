@@ -17,6 +17,7 @@ import { ServiceModule } from './service/service.module';
 import { ModificationsModule } from './modifications/mods.module';
 import { NotFoundComponent } from './not-found.component';
 import { ProfileModule } from './profile/profile.module';
+import { WorkshopModule } from './workshop/workshop.module';
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -43,6 +44,7 @@ import { AppRoutingModule } from './app-routing.module';
     CarsModule,
     ServiceModule,
     ProfileModule,
+    WorkshopModule,
     ModificationsModule,
     AppRoutingModule
   ],

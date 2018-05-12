@@ -3,12 +3,12 @@ import { SocketFuncService } from '../../socket-func.service';
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile-mods-list.component.html'
+  templateUrl: './workshop-mods-list.component.html'
 })
-export class ProfileModsListComponent implements OnInit {
+export class WorkshopModsListComponent implements OnInit {
   mods = [];
   cars = [];
-  car_selection = {};
+  car_selection = {car_id: null};
   mod_selection = {};
 
   constructor(private socketFunc: SocketFuncService) { }
@@ -20,11 +20,20 @@ export class ProfileModsListComponent implements OnInit {
     console.log(info);
     this.cars = info.info;
   }
-  ngOnInit() {
-    this.socketFunc.getModsUser(
+  getModsCar() {
+    this.socketFunc.getModsCar(
+      {
+        car_id: this.car_selection.car_id,
+        account_service_id: this.socketFunc.current_service
+      },
       result_mods => this.result_mods(result_mods)
-    );
-    this.socketFunc.getCarsUser(
+    )
+  }
+  ngOnInit() {
+    this.socketFunc.getCarsShop(
+      {
+        account_service_id: this.socketFunc.current_service
+      },
       result_cars => this.result_cars(result_cars)
     );
   }

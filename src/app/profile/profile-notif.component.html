@@ -8,7 +8,39 @@
       </div>
       <div class="col-9">
         <div class="tab-content" id="v-pills-tabContent">
-          <div class="tab-pane fade show active" id="v-pills-list-not" role="tabpanel" aria-labelledby="v-pills-list-not-tab">1</div>
+          <div class="tab-pane fade show active" id="v-pills-list-not" role="tabpanel" aria-labelledby="v-pills-list-not-tab">
+            <div class="card" *ngFor="let notif of notifs">
+              <div class="card-header">
+                <div class="row">
+                  <div class="col-3" style="text-align: right;">
+                    <h4>From:</h4>
+                  </div>
+                  <div class="col-3">
+                    <input type="text" class="form-control" placeholder="ID: {{notif.from_account_id}}" readonly>
+                  </div>
+                  <div class="col-3" style="text-align: right;">
+                    <h4>About:</h4>
+                  </div>
+                  <div class="col-3">
+                    <input type="text" class="form-control" placeholder="ID: {{notif.car_id}} " readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <textarea class="form-control" rows="8" placeholder="Workshop want to add your car "></textarea>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                  </div>
+                  <div class="col-4">
+                    <button type="button" class="btn btn-success">Accept</button>
+                    <button type="button" class="btn btn-danger">Decline</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

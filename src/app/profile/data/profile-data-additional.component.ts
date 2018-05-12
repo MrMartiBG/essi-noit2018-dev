@@ -6,7 +6,7 @@ import { SocketFuncService } from '../../socket-func.service';
   templateUrl: './profile-data-additional.component.html'
 })
 export class ProfileDataAdditionalComponent implements OnInit {
-  accInfoUser = {};
+  accInfoUser = {phone: null, birthdate: null, country: null, city: null, info: null};
   password: string;
   fName: string;
   lName: string;

@@ -1,3 +1,17 @@
-<p>
-  shop works
-</p>
+<form (ngSubmit)="addCarService()" #carEditForm="ngForm">
+  <div class="form-group row">
+    <label for="carId" class="col-sm-4 col-form-label">Select car:</label>
+    <div class="col-sm-8">
+      <select class="form-control" id="carId" required [(ngModel)]="addCarShop.car_id" name="carId">
+        <option *ngFor="let car of cars" [ngValue]="car.id">ID:{{car.id}} {{car.make}} {{car.model}} {{car.registration_number}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="shopId" class="col-sm-4 col-form-label">Workshop ID:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="shID" required [(ngModel)]="addCarShop.account_service_id" name="shID">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-add-car-shop">Add car to workshop</button>
+</form>

@@ -4,9 +4,10 @@ export class SocketFuncService {
   private url = "localhost:3030";
   private socket;
   isLoggedIn = false;
+  current_service: number;
 
   constructor() {
-    this.socket = io(this.url);
+    this.socket = io();
     this.socket.on("server_error", function(info) {
       console.log("server_error", info);
     });
@@ -37,6 +38,33 @@ export class SocketFuncService {
   }
   public getCarsUser(result) {
     this.socket.emit('get_cars_this_user', {}, result);
+  }
+  public updateCarId(carInfo, result) {
+    this.socket.emit('set_car_data_this_user', carInfo, result);
+  }
+  public addCarService(addCarShop, result) {
+    this.socket.emit('add_car_to_service_this_user', addCarShop, result)
+  }
+  public getModsUser(result) {
+    this.socket.emit('get_modification_this_user', {}, result)
+  }
+  public addModUser(modInfo, result) {
+    this.socket.emit('add_modification_this_user', modInfo, result)
+  }
+  public getNotifUser(result) {
+    this.socket.emit('get_notifications_this_user', {}, result);
+  }
+  public getUserWorkshop(result) {
+    this.socket.emit('get_service_users_this_user', {}, result);
+  }
+  public getCarsShop(shopInfo, result) {
+    this.socket.emit('get_service_cars_by_worker', shopInfo, result);
+  }
+  public getModsCar(carInfo, result) {
+    this.socket.emit('get_car_modifications_by_worker', carInfo, result);
+  }
+  public addModShop(modInfo, result) {
+    this.socket.emit('add_car_modification_by_worker', modInfo, result);
   }
   public fetchCar(car, result) {
     this.socket.emit('fetch_car_public', {id: car.id}, result);
